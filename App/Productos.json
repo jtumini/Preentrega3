@@ -1,0 +1,47 @@
+[
+	{
+		"id": "2",
+		"title": "botin adidassssss",
+		"description": "botin adidas futbol 11",
+		"price": "$3000",
+		"thumbnail": "img",
+		"code": "1238940",
+		"stock": "10"
+	},
+	{
+		"id": "3",
+		"title": "botin topper",
+		"description": "botin topper futbol 5",
+		"price": "$20000",
+		"thumbnail": "img",
+		"code": "1238956",
+		"stock": "8"
+	},
+	{
+		"id": "311",
+		"title": "botin puma",
+		"description": "botin puma color rojo",
+		"price": "$25000",
+		"thumbnail": "asd",
+		"code": "2389234",
+		"stock": "25"
+	},
+	{
+		"id": "3111",
+		"title": "botin puma",
+		"description": "botin puma color rojo",
+		"price": "$25000",
+		"thumbnail": "asd",
+		"code": "2389234",
+		"stock": "25"
+	},
+	{
+		"id": "31111",
+		"title": "botin kappa",
+		"description": "botin kappa color verde",
+		"price": "$1500",
+		"thumbnail": "asd",
+		"code": "2389234",
+		"stock": "25"
+	}
+]

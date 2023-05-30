@@ -9,7 +9,21 @@ app.get('/', (request, response) => {
 });
 
 app.get('/products', async (request, response) => {
-    const id = request.query.id;
+    const limit = request.query.limit;
+    const products = await manager.getProduct();
+
+        if (limit) {
+            const limitProducts = products.slice(0, Number(limit));
+            response.json(limitProducts);
+        } else {
+            response.json(products);
+        }
+    }   
+);
+
+app.get('/products/:pid', async (request, response) => {
+    const id = request.params.id;
+
         if (!id) {
             const products = await manager.getProduct();
             response.json(products);
@@ -18,8 +32,9 @@ app.get('/products', async (request, response) => {
             if (!product) return response.send({ error: 'El producto no existe' });
             response.send(product);
         }
-    }
+    }   
 );
+
 
 app.listen(8080, () => console.log('Servidor en funcionamiento en el puerto 8080'));
 

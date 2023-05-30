@@ -10,7 +10,7 @@ class ticketManager {
 
     addProduct = async( title, description, price, thumbnail, code, stock) => {
         const product  = await this.getProduct()
-        const id = product.length === 0 ? 1 : product[product.length-1].id + 1
+        const id = product.length == 0 ? 1 : product[product.length-1].id + 1
         product.push({id, title, description, price, thumbnail, code, stock})
         await fs.promises.writeFile(this.path, JSON.stringify(product, null, '\t'))
         return id    }
@@ -21,13 +21,13 @@ class ticketManager {
 
     getProductById = async (id) => {
         const products = await this.getProduct();
-        const product = products.find((item) => item.id === id);
+        const product = products.find((item) => item.id == id);
         return product ? product : 'Not Found';
     }
 
     updateProduct = async (id, campo, valor) => {
         const products = await this.getProduct()
-        const productoAModificar = products.find(item => item.id === id)
+        const productoAModificar = products.find(item => item.id == id)
     
         if (!productoAModificar) {
             console.log(`El producto con el id ${id} no existe`)
@@ -50,7 +50,7 @@ class ticketManager {
 
 }
 
-export default ticketManager;
+module.exports = ticketManager;
 
 const manager = new ticketManager ('./Productos.json')
 
